@@ -36,6 +36,8 @@ public abstract class ARCsLabourType extends ACFaAppService{
 //    public abstract List<ACFgRawModel> getLabourType() throws Exception;//for combobox 2017/03/21
    
 	public abstract List<ACFgRawModel> getAllEffLabourType() throws Exception;
+	public abstract List<ACFgRawModel> getAllEffLabourType_4_paintshop() throws Exception;
+	
 	public abstract List<ACFgRawModel> getAllEffLabourTypebySection(String sectionid) throws Exception;  // for labour type combo box,CN,2015/05/15
 	public abstract BigDecimal getEffHourlyRatebyLabour(String labourtype, Timestamp inputdate) throws Exception;  // for labour consumption,CN,2017/05/15
 }

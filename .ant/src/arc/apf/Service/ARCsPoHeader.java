@@ -41,5 +41,7 @@ public abstract class ARCsPoHeader extends ACFaAppService{
     public abstract String generate_name_4_PP() throws Exception;
     public abstract String generate_name_4_WC() throws Exception;
     public abstract String generate_name_4_PC() throws Exception;
+    public abstract String get_name_4_PC() throws Exception;
+    public abstract String get_name_4_WC() throws Exception;
  
 }

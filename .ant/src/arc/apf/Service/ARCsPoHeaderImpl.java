@@ -184,5 +184,31 @@ public class ARCsPoHeaderImpl extends ARCsPoHeader {
         //return resParam;
         return a;
     }
+    
+    public String get_name_4_PC() throws Exception {
+    	 ACFdSQLAssSelect ass = new ACFdSQLAssSelect();
+    	 java.text.DecimalFormat df = new java.text.DecimalFormat("#####0");
+    	  ass.setCustomSQL("select * from arc_auto_gen_no "
+                  + "where form_id = 'PC'");
+          
+          List<ACFgRawModel> newname = ass.executeQuery(ACFtDBUtility.getConnection("ARCDB"));
+          String a = "PC" + APFtUtilityAndGlobal.m_Lpad(df.format(newname.get(0).getBigDecimal("six_digit_serial_no")),"0",6);
+          //return resParam;
+          return a;
+    	
+    }
+    
+    public String get_name_4_WC() throws Exception {
+   	 ACFdSQLAssSelect ass = new ACFdSQLAssSelect();
+   	 java.text.DecimalFormat df = new java.text.DecimalFormat("#####0");
+   	  ass.setCustomSQL("select * from arc_auto_gen_no "
+                 + "where form_id = 'WC'");
+         
+         List<ACFgRawModel> newname = ass.executeQuery(ACFtDBUtility.getConnection("ARCDB"));
+         String a = "WC" + APFtUtilityAndGlobal.m_Lpad(df.format(newname.get(0).getBigDecimal("six_digit_serial_no")),"0",6);
+         //return resParam;
+         return a;
+   	
+   }
 
 }

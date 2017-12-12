@@ -39,6 +39,19 @@ public class ARCsLabourTypeImpl extends ARCsLabourType {
 			return ass.executeQuery();
 
 	}
+	
+	public List<ACFgRawModel> getAllEffLabourType_4_paintshop() throws Exception {
+		ACFdSQLAssSelect ass = new ACFdSQLAssSelect();
+		ass.setConnection(ACFtDBUtility.getConnection("ARCDB"));
+		
+		ass.setCustomSQL("select distinct labour_type as id, labour_type  || ' - ' || labour_type_description as text from arc_labour_type " + 
+						 "where effective_from_date <= current timestamp and effective_to_date >= current timestamp " +
+						 "and section_id = '04'" +
+						 "order by labour_type");
+
+		return ass.executeQuery();
+
+}
 
 	public List<ACFgRawModel> getAllEffLabourTypebySection(String sectionid) throws Exception {  // for labour type combo box,CN,2017/05/15
 		ACFdSQLAssSelect ass = new ACFdSQLAssSelect();
