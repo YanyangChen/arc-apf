@@ -16,9 +16,13 @@ public class ARCoWPLabourConsumption extends ACFaAppDao<ARCmWPLabourConsumption>
         super();
     }
     
+    
     @Override
     protected Connection getConnection() throws Exception {
         Connection conn = ACFtDBUtility.getConnection("ARCDB");
         return conn;
     }
+    
+    
+    
 }

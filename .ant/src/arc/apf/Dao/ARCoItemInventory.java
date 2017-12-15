@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acf.acf.Abstract.ACFaAppDao;
 import acf.acf.Static.ACFtDBUtility;
-
+import acf.acf.Static.ACFtUtility;
 import arc.apf.Model.ARCmItemInventory;
 
 @Repository
@@ -22,4 +22,9 @@ public class ARCoItemInventory extends ACFaAppDao<ARCmItemInventory> { //it shou
         Connection conn = ACFtDBUtility.getConnection("ARCDB");
         return conn;
     }
+    
+    public void beforeUpdateTrigger(ARCmItemInventory oldItem, ARCmItemInventory newItem) throws Exception {
+    	if (newItem.received_quantity.intValue() != 0)
+    	{newItem.receive_date = ACFtUtility.now();}
+	}
 }

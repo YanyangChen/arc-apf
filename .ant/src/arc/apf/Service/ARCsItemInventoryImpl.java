@@ -33,6 +33,26 @@ public class ARCsItemInventoryImpl extends ARCsItemInventory {
         
     }
     
+    public String getInventory_receives(String po_no) throws Exception  //for apwf005 grid objects collection, AC, 2017/04/11
+    {
+        ACFdSQLAssSelect ass = new ACFdSQLAssSelect();
+       
+        ass.setCustomSQL(
+                "SELECT * from arc_item_inventory i "+
+                "WHERE i.purchase_order_no = '%s'"
+                ,po_no);
+        
+        List<ACFgRawModel> result = ass.executeQuery(ACFtDBUtility.getConnection("ARCDB"));
+        Integer total_received = 0;
+        for (ACFgRawModel r : result)
+        {
+        	total_received += r.getBigDecimal("received_quantity").intValue();
+        }
+        return result.size()>0 ? total_received.toString() : "";
+      //  return result.size()>0 ? result.get(0).getString("supplier_desc") : "";
+        
+    }
+    
     public  List<ACFgRawModel> getItemUnits(String item_no) throws Exception//for apwf005 grid column ajax retrieve, AC, 2017/04/11
     {
         ACFdSQLAssSelect ass = new ACFdSQLAssSelect();
@@ -99,4 +119,6 @@ public class ARCsItemInventoryImpl extends ARCsItemInventory {
         return ass.executeQuery();
         
     }
-}
+    	}
+
+		
