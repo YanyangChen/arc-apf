@@ -1113,5 +1113,5 @@ theContainer3.appendChild(theSelect3);
 // $("#indirect_browse").pForm$setRelatedComboBox(${SubSectionAndSectionId}, [$("#indirect_browse #section_id"), $("#indirect_browse #sub_section_id")]);
 
 $("#frm_main").pForm$setRelatedComboBox(${businessDepartment}, [$("#frm_main #business_platform"), $("#frm_main #department")]);
-	
+$("#frm_search").pForm$setRelatedComboBox(${businessDepartment}, [$("#frm_search #s_business_platform"), $("#frm_search #s_department")]);
 </script>
