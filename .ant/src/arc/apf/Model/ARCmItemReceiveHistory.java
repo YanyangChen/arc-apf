@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import acf.acf.Abstract.ACFaAppModel;
 import acf.acf.General.annotation.ACFgTable;
 
-@ACFgTable(name = "arc_item_receive_history")
+@ACFgTable(name = "arc_receive_history")
 public class ARCmItemReceiveHistory extends ACFaAppModel {
 
     public ARCmItemReceiveHistory() throws Exception {
