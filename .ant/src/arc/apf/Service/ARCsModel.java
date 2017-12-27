@@ -75,7 +75,7 @@ public class ARCsModel extends ACFaAppService {
         ACFdSQLAssSelect ass = new ACFdSQLAssSelect();
         ass.setConnection(ACFtDBUtility.getConnection("ARCDB"));
         //ass.setCustomSQL("select mod_id as id, mod_id || ' - ' || mod_name as text from acf_module order by mod_seq");
-        ass.setCustomSQL("select distinct section_id as id, section_id || ' - ' || section_name as text from arc_section");
+        ass.setCustomSQL("select distinct section_id as id, section_id || ' - ' || section_name as text from arc_section where sub_section_id = 0");
         return ass.executeQuery();
         
     }

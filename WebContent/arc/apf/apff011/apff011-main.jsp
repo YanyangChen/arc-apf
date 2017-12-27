@@ -161,7 +161,7 @@ GetSubSectionId = jsonlist;
 							.setWidth(1250)
 							.addDismissButton("OK", function(){
 								if ($.type(programme_no) == "string"){
-									Action.modify();
+									
 									$("#frm_main #programme_no").setValue(programme_no);
 									programme_no = "";
 								}

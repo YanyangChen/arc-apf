@@ -19,7 +19,7 @@
 	      		</div>
 	      		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
 	      			<label for=s_sec_no style="display:block">Section ID.</label>
-	      			<acf:ComboBox id="s_section_id" name="section_id" editable="true" multiple="true" >
+	      			<acf:ComboBox id="s_section_id" name="section_id" editable="true" multiple="false" >
 	      			<acf:Bind on="initData"><script>
 	 					$(this).acfComboBox("init", ${modules} );
 	 				</script></acf:Bind>

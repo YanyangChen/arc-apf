@@ -10,7 +10,7 @@
 var sltedv;		
 							
 var subsectionlist = [
-{"action":2,"version":1,"id":"1","text":"1"}
+  {"action":2,"version":1,"id":"1","text":"1"}
 , {"action":2,"version":1,"id":"2","text":"2"}
 , {"action":2,"version":1,"id":"3","text":"3"}
 , {"action":2,"version":1,"id":"4","text":"4"}
@@ -161,7 +161,7 @@ GetSubSectionId = jsonlist;
 							.setWidth(1250)
 							.addDismissButton("OK", function(){
 								if ($.type(programme_no) == "string"){
-									Action.modify();
+									
 									$("#frm_main #programme_no").setValue(programme_no);
 									programme_no = "";
 								}
@@ -1113,5 +1113,5 @@ theContainer3.appendChild(theSelect3);
 // $("#indirect_browse").pForm$setRelatedComboBox(${SubSectionAndSectionId}, [$("#indirect_browse #section_id"), $("#indirect_browse #sub_section_id")]);
 
 $("#frm_main").pForm$setRelatedComboBox(${businessDepartment}, [$("#frm_main #business_platform"), $("#frm_main #department")]);
-	
+$("#frm_search").pForm$setRelatedComboBox(${businessDepartment}, [$("#frm_search #s_business_platform"), $("#frm_search #s_department")]);
 </script>

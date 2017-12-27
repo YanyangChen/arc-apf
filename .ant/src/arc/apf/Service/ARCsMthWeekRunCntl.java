@@ -1,5 +1,4 @@
 package arc.apf.Service;
-//package acf.acf.Service;
 
 import java.util.List;
 
@@ -24,17 +23,17 @@ import acf.acf.Static.ACFtUtility;
 
 
 @Service
-public abstract class ARCsItemInventory extends ACFaAppService{
+public abstract class ARCsMthWeekRunCntl extends ACFaAppService{
     
-    public ARCsItemInventory() throws Exception {
+    public ARCsMthWeekRunCntl() throws Exception {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    public abstract String getInventory(String po_no) throws Exception;//for apwf005 grid objects collection, AC, 2017/04/11
-    public abstract String getInventory_receives(String po_no) throws Exception;
-    public abstract List<ACFgRawModel> getItemUnits(String item_no) throws Exception;//for apwf005 grid column ajax retrieve, AC, 2017/04/11
-    public abstract List<ACFgRawModel> getMinItemUnits(String item_no) throws Exception;
-    public abstract List<ACFgRawModel> getItemNos() throws Exception;//for apwf005 grid column combobox, AC, 2017/04/11
-    public abstract List<ACFgRawModel> getItem_No() throws Exception;
+    public abstract String getBudgetAccountDescription(String supplier_code) throws Exception;//for budget grid browse column ajax retrive in apff011, AC, 2017/03/15
+    public abstract List<ACFgRawModel> getBudgetAccountAllocation() throws Exception;//for budget grid browse combobox in apff011, AC, 2017/03/15
+    public abstract List<ACFgRawModel> getActualAccountAllocation() throws Exception;//for account allocation grid browse combobox in apwf005, AC, 2017/05/02
+
+    public abstract List<ACFgRawModel> getActualAcAllocationCombo() throws Exception;   // for a/c allocation combo box,CN,2017/05/15
+    public abstract List<ACFgRawModel> getAcAllocPairs() throws Exception;  // SF for a/c alloc combo box search 
 }

@@ -188,5 +188,9 @@ public class APFtMapping {
     public final static String APFF601_SAVE_AJAX     = "apff601-save.ajax";
     public final static String APFF601_SEARCH_AJAX   = "apff601-search.ajax";
     public final static String APFF601_GET_FORM_AJAX   = "apff601-get-form.ajax";
+    
+    public final static String APFR001		         = APF + "/apfr001";
+	public final static String APFR001_PARAM         = "apfr001-param";
+    
 
 }

@@ -34,6 +34,7 @@ public abstract class ARCsItemInventory extends ACFaAppService{
     public abstract String getInventory(String po_no) throws Exception;//for apwf005 grid objects collection, AC, 2017/04/11
     public abstract String getInventory_receives(String po_no) throws Exception;
     public abstract List<ACFgRawModel> getItemUnits(String item_no) throws Exception;//for apwf005 grid column ajax retrieve, AC, 2017/04/11
+    public abstract List<ACFgRawModel> getMinItemUnits(String item_no) throws Exception;
     public abstract List<ACFgRawModel> getItemNos() throws Exception;//for apwf005 grid column combobox, AC, 2017/04/11
     public abstract List<ACFgRawModel> getItem_No() throws Exception;
 }

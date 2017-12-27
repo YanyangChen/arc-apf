@@ -73,6 +73,26 @@ public class ARCsItemInventoryImpl extends ARCsItemInventory {
         
     }
     
+    public  List<ACFgRawModel> getMinItemUnits(String item_no) throws Exception//for apwf005 grid column ajax retrieve, AC, 2017/04/11
+    {
+        ACFdSQLAssSelect ass = new ACFdSQLAssSelect();
+       
+        ass.setCustomSQL(
+                "SELECT * from arc_item_inventory i "+
+                "WHERE i.item_no= '%s'" +
+                 " AND purchase_order_no = " +
+               "( " +
+               "select min(purchase_order_no) from arc_item_inventory " +
+              " where item_no = '%2$s' " + 
+               ")"
+                ,item_no,item_no);
+     
+        List<ACFgRawModel> result = ass.executeQuery(ACFtDBUtility.getConnection("ARCDB"));
+        return result;
+      //  return result.size()>0 ? result.get(0).getString("supplier_desc") : "";
+        
+    }
+    
     public  List<ACFgRawModel> getPoQuantities(String purchae_order_no) throws Exception//for apwf005 grid column ajax retrieve, AC, 2017/04/11
     {
         ACFdSQLAssSelect ass = new ACFdSQLAssSelect();

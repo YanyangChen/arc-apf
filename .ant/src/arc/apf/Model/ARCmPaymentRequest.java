@@ -69,4 +69,10 @@ public class ARCmPaymentRequest extends ACFaAppModel {
     @Column(name = "no_of_times_printed")
     public BigDecimal no_of_times_printed;
     
+    
+    @Column(name = "input_date")
+    public Timestamp input_date;
+    
+    
+    
 }
